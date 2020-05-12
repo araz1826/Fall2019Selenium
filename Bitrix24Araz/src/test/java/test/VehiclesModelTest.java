@@ -13,8 +13,7 @@ public class VehiclesModelTest extends AbstractTestBase {
         LoginPage loginPage=new LoginPage();
         VehiclesPages vehiclesPages=new VehiclesPages();
 
-        loginPage.login();
-        vehiclesPages.navigateTo("Fleet","Vehicles Model");
+
         String expectedTitle = "All - Vehicles Model - Entities - System - Car - Entities - System";
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);

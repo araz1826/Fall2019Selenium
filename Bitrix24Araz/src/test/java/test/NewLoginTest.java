@@ -20,7 +20,7 @@ public class NewLoginTest extends AbstractTestBase {
         //right click on test-output and "show in explorer" for windows, for mac use reveal in Finder
         test=report.createTest("Verify page title"); //must add this every test at the beginning
         LoginPage loginPage=new LoginPage();
-        loginPage.login();
+
         test.info("Login as store manager");  // like system out.
         //loginPage.login("storemanager85","UserUser123"); you can also do that because it is constructor, you can initialize here as well
         Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");

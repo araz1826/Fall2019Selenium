@@ -1,5 +1,6 @@
 package test;
 
+import Pages.AbstractPageBase;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -23,8 +24,8 @@ public class AbstractTestBase {
     protected ExtentHtmlReporter htmlReporter;
     protected ExtentTest test;
 
-    @BeforeTest  // this is creating report, beforeTest is usually do that
-    @Parameters("reportName")  // this coming from xml. testng xml. to show the report for each suite
+    @BeforeTest
+    @Parameters("reportName")
     public void setupTest(@Optional String reportName) {// this makes parameter optional if not specify testng wil require this parameter for every test, in xml file
         System.out.println("Report Name: "+reportName);
         String reportNameString=reportName==null ? "report.html" : reportName;
@@ -41,9 +42,9 @@ public class AbstractTestBase {
         htmlReporter.config().setReportName("VYTRACK Test Automation Results");
     }
 
-    @AfterTest  //releasing the test
+    @AfterTest
     public void afterTest(){
-        report.flush(); //to release the test
+        report.flush();
     }
 
         @BeforeMethod
